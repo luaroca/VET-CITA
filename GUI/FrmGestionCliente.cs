@@ -71,16 +71,16 @@ namespace GUI
             LimpiarCampos();
         }
 
-        private void dataGridViewClientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridViewClientes.CurrentRow != null)
-            {
-                txtCC_Cliente.Text = dataGridViewClientes.CurrentRow.Cells[0].Value.ToString();
-                txtNombre.Text = dataGridViewClientes.CurrentRow.Cells[1].Value.ToString();
-                txtDireccion.Text = dataGridViewClientes.CurrentRow.Cells[2].Value.ToString();
-                txtTelefono.Text = dataGridViewClientes.CurrentRow.Cells[3].Value.ToString();
-            }
-        }
+        //private void dataGridViewClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (dataGridViewClientes.CurrentRow != null)
+        //    {
+        //        txtCC_Cliente.Text = dataGridViewClientes.CurrentRow.Cells[0].Value.ToString();
+        //        txtNombre.Text = dataGridViewClientes.CurrentRow.Cells[1].Value.ToString();
+        //        txtDireccion.Text = dataGridViewClientes.CurrentRow.Cells[2].Value.ToString();
+        //        txtTelefono.Text = dataGridViewClientes.CurrentRow.Cells[3].Value.ToString();
+        //    }
+        //}
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -107,5 +107,19 @@ namespace GUI
             MessageBox.Show(mensaje, "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimpiarCampos();
         }
+
+        private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int fila = dataGridViewClientes.CurrentCell.RowIndex;
+
+            txtCC_Cliente.Text = dataGridViewClientes[0, fila].Value.ToString();
+            txtNombre.Text = dataGridViewClientes[1, fila].Value.ToString();
+            txtDireccion.Text = dataGridViewClientes[2, fila].Value.ToString();
+            txtTelefono.Text = dataGridViewClientes[3, fila].Value.ToString();
+
+        }
+
+
+
     }
 }
