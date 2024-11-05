@@ -11,21 +11,25 @@ namespace BLL
 {
     public class LogicaCliente
     {
-        RepositoryCliente repository = new RepositoryCliente();
+        private RepositoryCliente repoCliente = new RepositoryCliente();
 
+       
         public DataTable ListarClientes()
         {
-            return repository.ListarClientes();
+            return repoCliente.ListarClientes();
         }
 
-        public DataTable BuscarCliente(string nombre)
+        
+        public DataTable BuscarClientes(string nombre)
         {
-            return repository.BuscarCliente(nombre);
+            return repoCliente.BuscarClientes(nombre);
         }
+
+        
 
         public string MantenimientoCliente(Cliente cliente, string accion)
         {
-            return repository.MantenimientoCliente(cliente, accion);
+            return repoCliente.MantenimientoCliente(cliente, accion);
         }
     }
 }
