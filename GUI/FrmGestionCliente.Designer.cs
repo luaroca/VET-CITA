@@ -171,6 +171,7 @@
             this.Controls.Add(this.txtCC_Cliente);
             this.Name = "FrmGestionCliente";
             this.Text = "FrmGestionCliente";
+            this.Load += new System.EventHandler(this.FrmGestionCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

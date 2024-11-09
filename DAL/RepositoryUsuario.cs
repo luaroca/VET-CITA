@@ -1,53 +1,48 @@
 ﻿using ENTITY;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
-
-
 
 namespace DAL
 {
-    public class RepositoryCliente
+    public class RepositoryUsuario
     {
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["sql"].ConnectionString);
 
-        public DataTable D_listar_clientes()
+        public DataTable D_listar_usuarios()
         {
-            SqlCommand cmd = new SqlCommand("sp_listar_clientes", cn);
+            SqlCommand cmd = new SqlCommand("sp_listar_usuarios", cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
         }
 
-        public DataTable D_buscar_cliente(Cliente cliente)
+        public DataTable D_buscar_usuario(Usuario obje)
         {
-            SqlCommand cmd = new SqlCommand("sp_buscar_cliente", cn);
+            SqlCommand cmd = new SqlCommand("sp_buscar_usuario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
+            cmd.Parameters.AddWithValue("@NameUsuario", obje.NameUsuario);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
         }
 
-        public string D_mantenimiento_cliente(Cliente cliente)
+        public string D_mantenimiento_usuario(Usuario obje)
         {
             string accion = "";
-            SqlCommand cmd = new SqlCommand("sp_mantenimiento_cliente", cn);
+            SqlCommand cmd = new SqlCommand("sp_mantenimiento_usuario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@CC_Cliente", cliente.CC_Cliente);
-            cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-            cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
-            cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
-            cmd.Parameters.Add("@Accion", SqlDbType.VarChar, 50).Value = cliente.Accion;
+            cmd.Parameters.AddWithValue("@NameUsuario", obje.NameUsuario);
+            cmd.Parameters.AddWithValue("@Contrasena", obje.Contrasena);
+            cmd.Parameters.AddWithValue("@Rol", obje.Rol);
             cmd.Parameters["@Accion"].Direction = ParameterDirection.InputOutput;
-
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();
             cmd.ExecuteNonQuery();

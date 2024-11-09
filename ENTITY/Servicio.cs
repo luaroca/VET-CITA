@@ -11,8 +11,9 @@ namespace ENTITY
         public int ID_Servicio { get; set; }
         public string Nombre_servicio { get; set; }
         public decimal Precio { get; set; }
+        public string Accion { get; set; }
 
-        
+
         public ICollection<Cita> Citas { get; set; }
     }
 }

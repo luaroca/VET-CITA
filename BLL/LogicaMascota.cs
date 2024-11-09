@@ -11,21 +11,21 @@ namespace BLL
 {
     public class LogicaMascota
     {
-        RepositoryMascota repository = new RepositoryMascota();
+        RepositoryMascota objd = new RepositoryMascota();
 
-        public DataTable ListarMascotas()
+        public DataTable N_listar_mascotas()
         {
-            return repository.ListarMascotas();
+            return objd.D_listar_mascotas();
         }
 
-        public DataTable BuscarMascota(string nombre)
+        public DataTable N_buscar_mascota(Mascota obje)
         {
-            return repository.BuscarMascota(nombre);
+            return objd.D_buscar_mascota(obje);
         }
 
-        public string MantenimientoMascota(Mascota mascota, string accion)
+        public string N_mantenimiento_mascota(Mascota obje)
         {
-            return repository.MantenimientoMascota(mascota, accion);
+            return objd.D_mantenimiento_mascota(obje);
         }
     }
 }

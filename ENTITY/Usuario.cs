@@ -11,5 +11,8 @@ namespace ENTITY
         public string NameUsuario { get; set; }
         public string Contrasena { get; set; }
         public string Rol { get; set; }
+        public string Accion { get; set; }
+
+
     }
 }

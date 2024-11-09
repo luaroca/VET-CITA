@@ -12,6 +12,7 @@ namespace ENTITY
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
+        public string Accion { get; set; }
         public ICollection<Mascota> Mascotas { get; set; }
     }
 }
