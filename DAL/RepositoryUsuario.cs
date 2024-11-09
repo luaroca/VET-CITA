@@ -42,6 +42,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@NameUsuario", obje.NameUsuario);
             cmd.Parameters.AddWithValue("@Contrasena", obje.Contrasena);
             cmd.Parameters.AddWithValue("@Rol", obje.Rol);
+            cmd.Parameters.Add("@Accion", SqlDbType.VarChar, 50).Value = obje.Accion;
             cmd.Parameters["@Accion"].Direction = ParameterDirection.InputOutput;
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();

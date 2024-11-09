@@ -44,6 +44,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@Fecha_Pago", obje.Fecha_Pago);
             cmd.Parameters.AddWithValue("@Monto", obje.Monto);
             cmd.Parameters.AddWithValue("@ID_Cita", obje.ID_Cita);
+            cmd.Parameters.Add("@Accion", SqlDbType.VarChar, 50).Value = obje.Accion;
             cmd.Parameters["@Accion"].Direction = ParameterDirection.InputOutput;
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();

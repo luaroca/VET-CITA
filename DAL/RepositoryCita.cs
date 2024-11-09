@@ -47,6 +47,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@ID_Mascota", obje.ID_Mascota);
             cmd.Parameters.AddWithValue("@ID_Veterinario", obje.ID_Veterinario);
             cmd.Parameters.AddWithValue("@ID_Servicio", obje.ID_Servicio);
+            cmd.Parameters.Add("@Accion", SqlDbType.VarChar, 50).Value = obje.Accion;
             cmd.Parameters["@Accion"].Direction = ParameterDirection.InputOutput;
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();
