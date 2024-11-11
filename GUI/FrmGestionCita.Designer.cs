@@ -45,6 +45,7 @@
             this.txtID_Cita = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.txtID_Servicios = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,11 +197,22 @@
             this.cmbEstado.Size = new System.Drawing.Size(121, 24);
             this.cmbEstado.TabIndex = 16;
             // 
+            // txtID_Servicios
+            // 
+            this.txtID_Servicios.FormattingEnabled = true;
+            this.txtID_Servicios.Items.AddRange(new object[] {
+            "Consulta General"});
+            this.txtID_Servicios.Location = new System.Drawing.Point(905, 98);
+            this.txtID_Servicios.Name = "txtID_Servicios";
+            this.txtID_Servicios.Size = new System.Drawing.Size(121, 24);
+            this.txtID_Servicios.TabIndex = 17;
+            // 
             // FrmGestionCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 552);
+            this.Controls.Add(this.txtID_Servicios);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtID_Cita);
@@ -220,6 +232,7 @@
             this.Controls.Add(this.dtpFecha);
             this.Name = "FrmGestionCita";
             this.Text = "FrmGestionCita";
+            this.Load += new System.EventHandler(this.FrmGestionCita_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,5 +258,6 @@
         private System.Windows.Forms.TextBox txtID_Cita;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.ComboBox txtID_Servicios;
     }
 }

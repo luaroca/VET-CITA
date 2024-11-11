@@ -50,7 +50,12 @@ namespace GUI
             cita.Costo = decimal.Parse(txtCosto.Text);
             cita.ID_Mascota = int.Parse(txtID_Mascota.Text);
             cita.ID_Veterinario = int.Parse(txtID_Veterinario.Text);
-            cita.ID_Servicio = int.Parse(txtID_Servicio.Text);
+
+            if(txtID_Servicios.Text == "Consulta General")
+            {
+                cita.ID_Servicio = 1;
+            }
+            //cita.ID_Servicio = int.Parse(txtID_Servicio.Text);
             cita.Accion = accion;
             string mensaje = logicaCita.N_mantenimiento_cita(cita);
             MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -70,6 +75,17 @@ namespace GUI
                 mantenimiento("1");
                 limpiar();
             }
+        }
+
+        private void FrmGestionCita_Load(object sender, EventArgs e)
+        {
+            dataGridViewCitas.DataSource = logicaCita.N_listar_citas();
+
+            // Renombrar las columnas para que sean más descriptivas, si es necesario
+            dataGridViewCitas.Columns["Nombre_Mascota"].HeaderText = "Mascota";
+            dataGridViewCitas.Columns["Nombre_Veterinario"].HeaderText = "Veterinario";
+            dataGridViewCitas.Columns["Nombre_Servicio"].HeaderText = "Servicio";
+            dataGridViewCitas.Columns["Estado"].HeaderText = "Estado";
         }
     }
 }
