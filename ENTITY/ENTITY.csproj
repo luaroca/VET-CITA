@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agenda.cs" />
     <Compile Include="Cita.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs" />

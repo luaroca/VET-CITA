@@ -28,5 +28,11 @@ namespace GUI
             FrmGestionCita frmGestionCita = new FrmGestionCita();
             frmGestionCita.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmGestionAgenda frmGestionAgenda = new FrmGestionAgenda();
+            frmGestionAgenda.ShowDialog();
+        }
     }
 }
