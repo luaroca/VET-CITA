@@ -56,6 +56,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionCita.Designer.cs">
+      <DependentUpon>FrmGestionCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionCita.resx">
+      <DependentUpon>FrmGestionCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionCliente.resx">
       <DependentUpon>FrmGestionCliente.cs</DependentUpon>

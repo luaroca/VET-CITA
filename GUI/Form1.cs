@@ -22,5 +22,11 @@ namespace GUI
             FrmGestionCliente frmGestionCliente = new FrmGestionCliente();
             frmGestionCliente.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmGestionCita frmGestionCita = new FrmGestionCita();
+            frmGestionCita.ShowDialog();
+        }
     }
 }
