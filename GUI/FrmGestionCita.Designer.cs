@@ -60,7 +60,7 @@
             // dataGridViewCitas
             // 
             this.dataGridViewCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCitas.Location = new System.Drawing.Point(12, 170);
+            this.dataGridViewCitas.Location = new System.Drawing.Point(12, 141);
             this.dataGridViewCitas.Name = "dataGridViewCitas";
             this.dataGridViewCitas.ReadOnly = true;
             this.dataGridViewCitas.RowHeadersWidth = 51;
