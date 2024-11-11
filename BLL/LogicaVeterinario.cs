@@ -27,5 +27,11 @@ namespace BLL
         {
             return objd.D_mantenimiento_veterinario(obje);
         }
+
+        public DataTable N_listar_veterinarios_basico()
+        {
+            return objd.D_listar_veterinarios_basico();
+        }
+
     }
 }

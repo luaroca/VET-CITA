@@ -17,6 +17,7 @@ namespace GUI
 
         Cita cita = new Cita();
         LogicaCita logicaCita = new LogicaCita();
+        LogicaVeterinario logicaVeterinario = new LogicaVeterinario();
 
         public FrmGestionCita()
         {
@@ -26,7 +27,14 @@ namespace GUI
             dtpHora.ShowUpDown = true; 
         }
 
-
+        private void CargarVeterinarios()
+        {
+            DataTable veterinarios = logicaVeterinario.N_listar_veterinarios_basico();
+            cmbVeterinario.DataSource = veterinarios;
+            cmbVeterinario.DisplayMember = "Nombre";
+            cmbVeterinario.ValueMember = "ID_Veterinario";
+            cmbVeterinario.SelectedIndex = -1; // No seleccionar ningún veterinario al inicio
+        }
         void limpiar()
         {
             txtID_Cita.Text = "";
@@ -41,21 +49,24 @@ namespace GUI
         }
 
 
-        void mantenimiento(string accion)
+
+
+        private void mantenimiento(string accion)
         {
             cita.ID_Cita = int.Parse(txtID_Cita.Text);
             cita.Fecha = dtpFecha.Value;
-            cita.Hora = dtpHora.Value.TimeOfDay; // Toma solo la parte de la hora
+            cita.Hora = dtpHora.Value.TimeOfDay;
             cita.Estado = cmbEstado.SelectedItem.ToString();
             cita.Costo = decimal.Parse(txtCosto.Text);
             cita.ID_Mascota = int.Parse(txtID_Mascota.Text);
-            cita.ID_Veterinario = int.Parse(txtID_Veterinario.Text);
 
-            if(txtID_Servicios.Text == "Consulta General")
+            // Usar el ID seleccionado en el ComboBox de veterinarios
+            if (cmbVeterinario.SelectedValue != null)
             {
-                cita.ID_Servicio = 1;
+                cita.ID_Veterinario = Convert.ToInt32(cmbVeterinario.SelectedValue);
             }
-            //cita.ID_Servicio = int.Parse(txtID_Servicio.Text);
+
+            cita.ID_Servicio = int.Parse(txtID_Servicio.Text);
             cita.Accion = accion;
             string mensaje = logicaCita.N_mantenimiento_cita(cita);
             MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -74,11 +85,14 @@ namespace GUI
             {
                 mantenimiento("1");
                 limpiar();
+                CargarVeterinarios();
             }
         }
 
         private void FrmGestionCita_Load(object sender, EventArgs e)
         {
+            CargarVeterinarios();
+
             dataGridViewCitas.DataSource = logicaCita.N_listar_citas();
 
             // Renombrar las columnas para que sean más descriptivas, si es necesario

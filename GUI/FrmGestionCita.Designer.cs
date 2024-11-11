@@ -46,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.txtID_Servicios = new System.Windows.Forms.ComboBox();
+            this.cmbVeterinario = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(569, 48);
+            this.txtEstado.Location = new System.Drawing.Point(933, 231);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(100, 22);
             this.txtEstado.TabIndex = 3;
@@ -160,7 +161,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(955, 141);
+            this.btnRegistrar.Location = new System.Drawing.Point(933, 322);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(92, 50);
             this.btnRegistrar.TabIndex = 13;
@@ -192,7 +193,7 @@
             "PENDIENTE",
             "CANCELADA",
             "AUTORIZADA"});
-            this.cmbEstado.Location = new System.Drawing.Point(905, 58);
+            this.cmbEstado.Location = new System.Drawing.Point(559, 45);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(121, 24);
             this.cmbEstado.TabIndex = 16;
@@ -202,16 +203,25 @@
             this.txtID_Servicios.FormattingEnabled = true;
             this.txtID_Servicios.Items.AddRange(new object[] {
             "Consulta General"});
-            this.txtID_Servicios.Location = new System.Drawing.Point(905, 98);
+            this.txtID_Servicios.Location = new System.Drawing.Point(923, 201);
             this.txtID_Servicios.Name = "txtID_Servicios";
             this.txtID_Servicios.Size = new System.Drawing.Size(121, 24);
             this.txtID_Servicios.TabIndex = 17;
+            // 
+            // cmbVeterinario
+            // 
+            this.cmbVeterinario.FormattingEnabled = true;
+            this.cmbVeterinario.Location = new System.Drawing.Point(923, 275);
+            this.cmbVeterinario.Name = "cmbVeterinario";
+            this.cmbVeterinario.Size = new System.Drawing.Size(121, 24);
+            this.cmbVeterinario.TabIndex = 18;
             // 
             // FrmGestionCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 552);
+            this.Controls.Add(this.cmbVeterinario);
             this.Controls.Add(this.txtID_Servicios);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.label6);
@@ -259,5 +269,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.ComboBox txtID_Servicios;
+        private System.Windows.Forms.ComboBox cmbVeterinario;
     }
 }

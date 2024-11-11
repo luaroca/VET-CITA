@@ -34,6 +34,16 @@ namespace DAL
             return dt;
         }
 
+        public DataTable D_listar_veterinarios_basico()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT ID_Veterinario, Nombre FROM Veterinario", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        
+
         public string D_mantenimiento_veterinario(Veterinario obje)
         {
             string accion = "";
