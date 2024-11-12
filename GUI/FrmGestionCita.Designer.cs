@@ -31,22 +31,19 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewCitas = new System.Windows.Forms.DataGridView();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtCosto = new System.Windows.Forms.TextBox();
-            this.txtID_Mascota = new System.Windows.Forms.TextBox();
-            this.txtID_Veterinario = new System.Windows.Forms.TextBox();
-            this.txtID_Servicio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtID_Cita = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.txtID_Servicios = new System.Windows.Forms.ComboBox();
             this.cmbVeterinario = new System.Windows.Forms.ComboBox();
+            this.cmbServicio = new System.Windows.Forms.ComboBox();
+            this.txtCCCliente = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,40 +76,12 @@
             this.dtpHora.Size = new System.Drawing.Size(285, 22);
             this.dtpHora.TabIndex = 2;
             // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(933, 231);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(100, 22);
-            this.txtEstado.TabIndex = 3;
-            // 
             // txtCosto
             // 
-            this.txtCosto.Location = new System.Drawing.Point(569, 93);
+            this.txtCosto.Location = new System.Drawing.Point(555, 93);
             this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(100, 22);
+            this.txtCosto.Size = new System.Drawing.Size(125, 22);
             this.txtCosto.TabIndex = 4;
-            // 
-            // txtID_Mascota
-            // 
-            this.txtID_Mascota.Location = new System.Drawing.Point(569, 149);
-            this.txtID_Mascota.Name = "txtID_Mascota";
-            this.txtID_Mascota.Size = new System.Drawing.Size(100, 22);
-            this.txtID_Mascota.TabIndex = 5;
-            // 
-            // txtID_Veterinario
-            // 
-            this.txtID_Veterinario.Location = new System.Drawing.Point(569, 201);
-            this.txtID_Veterinario.Name = "txtID_Veterinario";
-            this.txtID_Veterinario.Size = new System.Drawing.Size(100, 22);
-            this.txtID_Veterinario.TabIndex = 6;
-            // 
-            // txtID_Servicio
-            // 
-            this.txtID_Servicio.Location = new System.Drawing.Point(569, 253);
-            this.txtID_Servicio.Name = "txtID_Servicio";
-            this.txtID_Servicio.Size = new System.Drawing.Size(100, 22);
-            this.txtID_Servicio.TabIndex = 7;
             // 
             // label1
             // 
@@ -132,19 +101,10 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Costo";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(719, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "ID Mascota";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(719, 206);
+            this.label4.Location = new System.Drawing.Point(703, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 11;
@@ -153,7 +113,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(719, 258);
+            this.label5.Location = new System.Drawing.Point(703, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 16);
             this.label5.TabIndex = 12;
@@ -161,7 +121,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(933, 322);
+            this.btnRegistrar.Location = new System.Drawing.Point(588, 358);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(92, 50);
             this.btnRegistrar.TabIndex = 13;
@@ -171,7 +131,7 @@
             // 
             // txtID_Cita
             // 
-            this.txtID_Cita.Location = new System.Drawing.Point(569, 303);
+            this.txtID_Cita.Location = new System.Drawing.Point(580, 302);
             this.txtID_Cita.Name = "txtID_Cita";
             this.txtID_Cita.Size = new System.Drawing.Size(100, 22);
             this.txtID_Cita.TabIndex = 14;
@@ -179,7 +139,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(722, 308);
+            this.label6.Location = new System.Drawing.Point(709, 302);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 16);
             this.label6.TabIndex = 15;
@@ -198,45 +158,56 @@
             this.cmbEstado.Size = new System.Drawing.Size(121, 24);
             this.cmbEstado.TabIndex = 16;
             // 
-            // txtID_Servicios
-            // 
-            this.txtID_Servicios.FormattingEnabled = true;
-            this.txtID_Servicios.Items.AddRange(new object[] {
-            "Consulta General"});
-            this.txtID_Servicios.Location = new System.Drawing.Point(923, 201);
-            this.txtID_Servicios.Name = "txtID_Servicios";
-            this.txtID_Servicios.Size = new System.Drawing.Size(121, 24);
-            this.txtID_Servicios.TabIndex = 17;
-            // 
             // cmbVeterinario
             // 
             this.cmbVeterinario.FormattingEnabled = true;
-            this.cmbVeterinario.Location = new System.Drawing.Point(923, 275);
+            this.cmbVeterinario.Location = new System.Drawing.Point(559, 135);
             this.cmbVeterinario.Name = "cmbVeterinario";
             this.cmbVeterinario.Size = new System.Drawing.Size(121, 24);
             this.cmbVeterinario.TabIndex = 18;
+            // 
+            // cmbServicio
+            // 
+            this.cmbServicio.FormattingEnabled = true;
+            this.cmbServicio.Location = new System.Drawing.Point(569, 209);
+            this.cmbServicio.Name = "cmbServicio";
+            this.cmbServicio.Size = new System.Drawing.Size(121, 24);
+            this.cmbServicio.TabIndex = 19;
+            // 
+            // txtCCCliente
+            // 
+            this.txtCCCliente.Location = new System.Drawing.Point(569, 258);
+            this.txtCCCliente.Name = "txtCCCliente";
+            this.txtCCCliente.Size = new System.Drawing.Size(121, 22);
+            this.txtCCCliente.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(706, 258);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 16);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "CC Cliente";
             // 
             // FrmGestionCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 552);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtCCCliente);
+            this.Controls.Add(this.cmbServicio);
             this.Controls.Add(this.cmbVeterinario);
-            this.Controls.Add(this.txtID_Servicios);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtID_Cita);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtID_Servicio);
-            this.Controls.Add(this.txtID_Veterinario);
-            this.Controls.Add(this.txtID_Mascota);
             this.Controls.Add(this.txtCosto);
-            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.dtpHora);
             this.Controls.Add(this.dataGridViewCitas);
             this.Controls.Add(this.dtpFecha);
@@ -254,21 +225,18 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DataGridView dataGridViewCitas;
         private System.Windows.Forms.DateTimePicker dtpHora;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtCosto;
-        private System.Windows.Forms.TextBox txtID_Mascota;
-        private System.Windows.Forms.TextBox txtID_Veterinario;
-        private System.Windows.Forms.TextBox txtID_Servicio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox txtID_Cita;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbEstado;
-        private System.Windows.Forms.ComboBox txtID_Servicios;
         private System.Windows.Forms.ComboBox cmbVeterinario;
+        private System.Windows.Forms.ComboBox cmbServicio;
+        private System.Windows.Forms.TextBox txtCCCliente;
+        private System.Windows.Forms.Label label7;
     }
 }

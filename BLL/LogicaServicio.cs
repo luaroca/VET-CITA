@@ -27,5 +27,12 @@ namespace BLL
         {
             return objd.D_mantenimiento_servicio(obj);
         }
+
+        public DataTable N_listar_servicios_basico()
+        {
+            return objd.D_listar_servicios();
+        }
+
+
     }
 }

@@ -31,8 +31,9 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.txtID_Veterinario = new System.Windows.Forms.TextBox();
-            this.Registrar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.dataGridViewAgenda = new System.Windows.Forms.DataGridView();
+            this.cmbVeterinario = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgenda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,20 +56,20 @@
             // 
             // txtID_Veterinario
             // 
-            this.txtID_Veterinario.Location = new System.Drawing.Point(789, 171);
+            this.txtID_Veterinario.Location = new System.Drawing.Point(725, 343);
             this.txtID_Veterinario.Name = "txtID_Veterinario";
             this.txtID_Veterinario.Size = new System.Drawing.Size(250, 22);
             this.txtID_Veterinario.TabIndex = 2;
             // 
-            // Registrar
+            // btnRegistrar
             // 
-            this.Registrar.Location = new System.Drawing.Point(789, 235);
-            this.Registrar.Name = "Registrar";
-            this.Registrar.Size = new System.Drawing.Size(250, 23);
-            this.Registrar.TabIndex = 3;
-            this.Registrar.Text = "button1";
-            this.Registrar.UseVisualStyleBackColor = true;
-            this.Registrar.Click += new System.EventHandler(this.Registrar_Click);
+            this.btnRegistrar.Location = new System.Drawing.Point(789, 235);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(250, 23);
+            this.btnRegistrar.TabIndex = 3;
+            this.btnRegistrar.Text = "button1";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.Registrar_Click);
             // 
             // dataGridViewAgenda
             // 
@@ -80,13 +81,22 @@
             this.dataGridViewAgenda.Size = new System.Drawing.Size(634, 274);
             this.dataGridViewAgenda.TabIndex = 4;
             // 
+            // cmbVeterinario
+            // 
+            this.cmbVeterinario.FormattingEnabled = true;
+            this.cmbVeterinario.Location = new System.Drawing.Point(789, 177);
+            this.cmbVeterinario.Name = "cmbVeterinario";
+            this.cmbVeterinario.Size = new System.Drawing.Size(250, 24);
+            this.cmbVeterinario.TabIndex = 5;
+            // 
             // FrmGestionAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 450);
+            this.Controls.Add(this.cmbVeterinario);
             this.Controls.Add(this.dataGridViewAgenda);
-            this.Controls.Add(this.Registrar);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtID_Veterinario);
             this.Controls.Add(this.dtpHora);
             this.Controls.Add(this.dtpFecha);
@@ -104,7 +114,8 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DateTimePicker dtpHora;
         private System.Windows.Forms.TextBox txtID_Veterinario;
-        private System.Windows.Forms.Button Registrar;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.DataGridView dataGridViewAgenda;
+        private System.Windows.Forms.ComboBox cmbVeterinario;
     }
 }

@@ -18,7 +18,7 @@ namespace GUI
         Cita cita = new Cita();
         LogicaCita logicaCita = new LogicaCita();
         LogicaVeterinario logicaVeterinario = new LogicaVeterinario();
-
+        LogicaServicio logicaServicio = new LogicaServicio();
         public FrmGestionCita()
         {
             InitializeComponent();
@@ -35,16 +35,22 @@ namespace GUI
             cmbVeterinario.ValueMember = "ID_Veterinario";
             cmbVeterinario.SelectedIndex = -1; // No seleccionar ningún veterinario al inicio
         }
+
+        private void CargarServicios()
+        {
+            DataTable servicios = logicaServicio.N_listar_servicios_basico();
+            cmbServicio.DataSource = servicios;
+            cmbServicio.DisplayMember = "Nombre_servicio";
+            cmbServicio.ValueMember = "Nombre_servicio";
+            cmbServicio.SelectedIndex = -1; // No seleccionar ningún servicio al inicio
+        }
+
         void limpiar()
         {
             txtID_Cita.Text = "";
             dtpFecha.Value = DateTime.Now;
-            dtpHora.Value = DateTime.Now; // Resetea la hora al limpiar
-            txtEstado.Text = "";
-            txtCosto.Text = "";
-            txtID_Mascota.Text = "";
-            txtID_Veterinario.Text = "";
-            txtID_Servicio.Text = "";
+            dtpHora.Value = DateTime.Now; // Resetea la hora al limpiar            
+            txtCosto.Text = "";           
             dataGridViewCitas.DataSource = logicaCita.N_listar_citas();
         }
 
@@ -57,6 +63,7 @@ namespace GUI
             cita.Fecha = dtpFecha.Value;
             cita.Hora = dtpHora.Value.TimeOfDay;
             cita.Estado = cmbEstado.SelectedItem.ToString();
+            cita.CC_Cliente= int.Parse(txtCCCliente.Text);
             //cita.Costo = decimal.Parse(txtCosto.Text);
             //cita.ID_Mascota = int.Parse(txtID_Mascota.Text);
 
@@ -66,7 +73,10 @@ namespace GUI
                 cita.ID_Veterinario = Convert.ToInt32(cmbVeterinario.SelectedValue);
             }
 
-            cita.Nombre_servicio = txtID_Servicio.Text;
+            if (cmbServicio.SelectedValue != null)
+            {
+                cita.Nombre_servicio = cmbServicio.SelectedValue.ToString();
+            }
             cita.Accion = accion;
             string mensaje = logicaCita.N_mantenimiento_cita(cita);
             MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -93,11 +103,11 @@ namespace GUI
         private void FrmGestionCita_Load(object sender, EventArgs e)
         {
             CargarVeterinarios();
+            CargarServicios();
 
             dataGridViewCitas.DataSource = logicaCita.N_listar_citas();
 
             // Renombrar las columnas para que sean más descriptivas, si es necesario
-            dataGridViewCitas.Columns["Nombre_Mascota"].HeaderText = "Mascota";
             dataGridViewCitas.Columns["Nombre_Veterinario"].HeaderText = "Veterinario";
             dataGridViewCitas.Columns["Nombre_Servicio"].HeaderText = "Servicio";
             dataGridViewCitas.Columns["Estado"].HeaderText = "Estado";
