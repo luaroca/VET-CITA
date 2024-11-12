@@ -57,8 +57,8 @@ namespace GUI
             cita.Fecha = dtpFecha.Value;
             cita.Hora = dtpHora.Value.TimeOfDay;
             cita.Estado = cmbEstado.SelectedItem.ToString();
-            cita.Costo = decimal.Parse(txtCosto.Text);
-            cita.ID_Mascota = int.Parse(txtID_Mascota.Text);
+            //cita.Costo = decimal.Parse(txtCosto.Text);
+            //cita.ID_Mascota = int.Parse(txtID_Mascota.Text);
 
             // Usar el ID seleccionado en el ComboBox de veterinarios
             if (cmbVeterinario.SelectedValue != null)
@@ -66,10 +66,11 @@ namespace GUI
                 cita.ID_Veterinario = Convert.ToInt32(cmbVeterinario.SelectedValue);
             }
 
-            cita.ID_Servicio = int.Parse(txtID_Servicio.Text);
+            cita.Nombre_servicio = txtID_Servicio.Text;
             cita.Accion = accion;
             string mensaje = logicaCita.N_mantenimiento_cita(cita);
             MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //
         }
 
 

@@ -23,31 +23,30 @@ namespace DAL
             return dt;
         }
 
-        public DataTable D_buscar_cita(Cita obje)
+        public DataTable D_buscar_cita(Cita obj)
         {
             SqlCommand cmd = new SqlCommand("sp_buscar_cita", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Fecha", obje.Fecha);
+            cmd.Parameters.AddWithValue("@ID_Cita", obj.ID_Cita);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
         }
 
-        public string D_mantenimiento_cita(Cita obje)
+        public string D_mantenimiento_cita(Cita obj)
         {
             string accion = "";
             SqlCommand cmd = new SqlCommand("sp_mantenimiento_cita", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ID_Cita", obje.ID_Cita);
-            cmd.Parameters.AddWithValue("@Fecha", obje.Fecha);
-            cmd.Parameters.AddWithValue("@Hora", obje.Hora);
-            cmd.Parameters.AddWithValue("@Estado", obje.Estado);
-            cmd.Parameters.AddWithValue("@Costo", obje.Costo);
-            cmd.Parameters.AddWithValue("@ID_Mascota", obje.ID_Mascota);
-            cmd.Parameters.AddWithValue("@ID_Veterinario", obje.ID_Veterinario);
-            cmd.Parameters.AddWithValue("@ID_Servicio", obje.ID_Servicio);
-            cmd.Parameters.Add("@Accion", SqlDbType.VarChar, 50).Value = obje.Accion;
+            cmd.Parameters.AddWithValue("@ID_Cita", obj.ID_Cita);
+            cmd.Parameters.AddWithValue("@Fecha", obj.Fecha);
+            cmd.Parameters.AddWithValue("@Hora", obj.Hora);
+            cmd.Parameters.AddWithValue("@Estado", obj.Estado);
+            cmd.Parameters.AddWithValue("@CC_Cliente", obj.CC_Cliente);
+            cmd.Parameters.AddWithValue("@ID_Veterinario", obj.ID_Veterinario);
+            cmd.Parameters.AddWithValue("@Nombre_servicio", obj.Nombre_servicio);
+            cmd.Parameters.Add("@Accion", SqlDbType.VarChar, 50).Value = obj.Accion;
             cmd.Parameters["@Accion"].Direction = ParameterDirection.InputOutput;
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();

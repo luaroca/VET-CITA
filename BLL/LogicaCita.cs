@@ -18,14 +18,14 @@ namespace BLL
             return objd.D_listar_citas();
         }
 
-        public DataTable N_buscar_cita(Cita obje)
+        public DataTable N_buscar_cita(Cita obj)
         {
-            return objd.D_buscar_cita(obje);
+            return objd.D_buscar_cita(obj);
         }
 
-        public string N_mantenimiento_cita(Cita obje)
+        public string N_mantenimiento_cita(Cita obj)
         {
-            return objd.D_mantenimiento_cita(obje);
+            return objd.D_mantenimiento_cita(obj);
         }
     }
 }

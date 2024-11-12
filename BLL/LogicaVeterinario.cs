@@ -13,25 +13,26 @@ namespace BLL
     {
         RepositoryVeterinario objd = new RepositoryVeterinario();
 
-        public DataTable N_listar_veterinarios()
+        public DataTable N_listar_veterinario()
         {
-            return objd.D_listar_veterinarios();
+            return objd.D_listar_veterinario();
         }
 
-        public DataTable N_buscar_veterinario(Veterinario obje)
+        public DataTable N_buscar_veterinario(Veterinario obj)
         {
-            return objd.D_buscar_veterinario(obje);
+            return objd.D_buscar_veterinario(obj);
         }
 
-        public string N_mantenimiento_veterinario(Veterinario obje)
+        public string N_mantenimiento_veterinario(Veterinario obj)
         {
-            return objd.D_mantenimiento_veterinario(obje);
+            return objd.D_mantenimiento_veterinario(obj);
         }
 
         public DataTable N_listar_veterinarios_basico()
         {
             return objd.D_listar_veterinarios_basico();
         }
+
 
     }
 }

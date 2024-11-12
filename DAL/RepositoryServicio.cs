@@ -23,26 +23,25 @@ namespace DAL
             return dt;
         }
 
-        public DataTable D_buscar_servicio(Servicio obje)
+        public DataTable D_buscar_servicio(Servicio obj)
         {
             SqlCommand cmd = new SqlCommand("sp_buscar_servicio", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Nombre_servicio", obje.Nombre_servicio);
+            cmd.Parameters.AddWithValue("@Nombre_servicio", obj.Nombre_servicio);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
         }
 
-        public string D_mantenimiento_servicio(Servicio obje)
+        public string D_mantenimiento_servicio(Servicio obj)
         {
             string accion = "";
             SqlCommand cmd = new SqlCommand("sp_mantenimiento_servicio", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ID_Servicio", obje.ID_Servicio);
-            cmd.Parameters.AddWithValue("@Nombre_servicio", obje.Nombre_servicio);
-            cmd.Parameters.AddWithValue("@Precio", obje.Precio);
-            cmd.Parameters.Add("@Accion", SqlDbType.VarChar, 50).Value = obje.Accion;
+            cmd.Parameters.AddWithValue("@Nombre_servicio", obj.Nombre_servicio);
+            cmd.Parameters.AddWithValue("@Precio", obj.Precio);
+            cmd.Parameters.Add("@Accion", SqlDbType.VarChar, 50).Value = obj.Accion;
             cmd.Parameters["@Accion"].Direction = ParameterDirection.InputOutput;
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();

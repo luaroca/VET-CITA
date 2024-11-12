@@ -12,10 +12,9 @@ namespace ENTITY
         public DateTime Fecha { get; set; }
         public TimeSpan Hora { get; set; }
         public string Estado { get; set; }
-        public decimal Costo { get; set; }
-        public int ID_Mascota { get; set; }
+        public int CC_Cliente { get; set; }
         public int ID_Veterinario { get; set; }
-        public int ID_Servicio { get; set; }
+        public string Nombre_servicio { get; set; }
         public string Accion { get; set; }
     }
 }
