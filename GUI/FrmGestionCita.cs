@@ -23,6 +23,7 @@ namespace GUI
         LogicaMascota logicaMascota = new LogicaMascota();
         LogicaVeterinario logicaVeterinario = new LogicaVeterinario();
         LogicaServicio logicaServicio = new LogicaServicio();
+        LogicaAgenda logicaAgenda = new LogicaAgenda();
         public FrmGestionCita()
         {
             InitializeComponent();
@@ -128,6 +129,7 @@ namespace GUI
             CargarServicios();
 
             dataGridViewCitas.DataSource = logicaCita.N_listar_citas();
+            dataGridViewAgenda.DataSource = logicaAgenda.N_listar_agenda();
 
             // Renombrar las columnas para que sean más descriptivas, si es necesario
             dataGridViewCitas.Columns["Nombre_Veterinario"].HeaderText = "Veterinario";
