@@ -44,6 +44,22 @@
             this.cmbServicio = new System.Windows.Forms.ComboBox();
             this.txtCCCliente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtNombreMascota = new System.Windows.Forms.TextBox();
+            this.txtRaza = new System.Windows.Forms.TextBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.txtSexo = new System.Windows.Forms.TextBox();
+            this.cmbEspecie = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,11 +206,159 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "CC Cliente";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(978, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 16);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Nombre Cliente";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(981, 93);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 16);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Direccion";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(984, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 16);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Telefono";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(987, 187);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 16);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Nombre Mascota";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(990, 221);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 16);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Especie";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(990, 263);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 16);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Raza";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(990, 301);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 16);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Edad";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(993, 337);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 16);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Sexo";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(1102, 48);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.TabIndex = 30;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(1102, 98);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(100, 22);
+            this.txtDireccion.TabIndex = 31;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(1102, 135);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 22);
+            this.txtTelefono.TabIndex = 32;
+            // 
+            // txtNombreMascota
+            // 
+            this.txtNombreMascota.Location = new System.Drawing.Point(1104, 187);
+            this.txtNombreMascota.Name = "txtNombreMascota";
+            this.txtNombreMascota.Size = new System.Drawing.Size(100, 22);
+            this.txtNombreMascota.TabIndex = 33;
+            // 
+            // txtRaza
+            // 
+            this.txtRaza.Location = new System.Drawing.Point(1102, 257);
+            this.txtRaza.Name = "txtRaza";
+            this.txtRaza.Size = new System.Drawing.Size(100, 22);
+            this.txtRaza.TabIndex = 34;
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(1102, 301);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(100, 22);
+            this.txtEdad.TabIndex = 35;
+            // 
+            // txtSexo
+            // 
+            this.txtSexo.Location = new System.Drawing.Point(1102, 337);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.Size = new System.Drawing.Size(100, 22);
+            this.txtSexo.TabIndex = 36;
+            // 
+            // cmbEspecie
+            // 
+            this.cmbEspecie.FormattingEnabled = true;
+            this.cmbEspecie.Items.AddRange(new object[] {
+            "CANINO",
+            "FELINO"});
+            this.cmbEspecie.Location = new System.Drawing.Point(1104, 221);
+            this.cmbEspecie.Name = "cmbEspecie";
+            this.cmbEspecie.Size = new System.Drawing.Size(121, 24);
+            this.cmbEspecie.TabIndex = 37;
+            // 
             // FrmGestionCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 552);
+            this.ClientSize = new System.Drawing.Size(1475, 642);
+            this.Controls.Add(this.cmbEspecie);
+            this.Controls.Add(this.txtSexo);
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.txtRaza);
+            this.Controls.Add(this.txtNombreMascota);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCCCliente);
             this.Controls.Add(this.cmbServicio);
@@ -238,5 +402,21 @@
         private System.Windows.Forms.ComboBox cmbServicio;
         private System.Windows.Forms.TextBox txtCCCliente;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtNombreMascota;
+        private System.Windows.Forms.TextBox txtRaza;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.TextBox txtSexo;
+        private System.Windows.Forms.ComboBox cmbEspecie;
     }
 }

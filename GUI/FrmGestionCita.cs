@@ -17,6 +17,10 @@ namespace GUI
 
         Cita cita = new Cita();
         LogicaCita logicaCita = new LogicaCita();
+        Mascota mascota = new Mascota();
+        Cliente cliente = new Cliente();
+        LogicaCliente logicaCliente = new LogicaCliente();
+        LogicaMascota logicaMascota = new LogicaMascota();
         LogicaVeterinario logicaVeterinario = new LogicaVeterinario();
         LogicaServicio logicaServicio = new LogicaServicio();
         public FrmGestionCita()
@@ -59,15 +63,33 @@ namespace GUI
 
         private void mantenimiento(string accion)
         {
+
+            cliente.CC_Cliente = int.Parse(txtCCCliente.Text);
+            cliente.Nombre = txtNombre.Text;
+            cliente.Direccion = txtDireccion.Text;
+            cliente.Telefono = txtTelefono.Text;
+            cliente.Accion = accion;
+            string mensaje2 = logicaCliente.N_mantenimiento_cliente(cliente);
+            MessageBox.Show(mensaje2, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            mascota.Nombre = txtNombreMascota.Text;
+            mascota.Especie = cmbEspecie.SelectedItem.ToString();
+            mascota.Raza = txtRaza.Text;
+            mascota.Edad = int.Parse(txtEdad.Text);
+            mascota.Sexo = txtSexo.Text;
+            mascota.CC_Cliente = int.Parse(txtCCCliente.Text);
+            mascota.Accion = accion;
+
+            string mensaje1 = logicaMascota.N_mantenimiento_mascota(mascota);
+            MessageBox.Show(mensaje1, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
             cita.ID_Cita = int.Parse(txtID_Cita.Text);
             cita.Fecha = dtpFecha.Value;
             cita.Hora = dtpHora.Value.TimeOfDay;
             cita.Estado = cmbEstado.SelectedItem.ToString();
             cita.CC_Cliente= int.Parse(txtCCCliente.Text);
-            //cita.Costo = decimal.Parse(txtCosto.Text);
-            //cita.ID_Mascota = int.Parse(txtID_Mascota.Text);
-
-            // Usar el ID seleccionado en el ComboBox de veterinarios
+            
             if (cmbVeterinario.SelectedValue != null)
             {
                 cita.ID_Veterinario = Convert.ToInt32(cmbVeterinario.SelectedValue);
