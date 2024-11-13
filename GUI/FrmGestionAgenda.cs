@@ -37,7 +37,7 @@ namespace GUI
         {
             dtpFecha.Value = DateTime.Now;
             dtpHora.Value = DateTime.Now;
-            txtID_Veterinario.Text = "";
+            //txtID_Veterinario.Text = "";
             dataGridViewAgenda.DataSource = logicaAgenda.N_listar_agenda();
         }
 
@@ -71,6 +71,41 @@ namespace GUI
 
             CargarVeterinarios();
             dataGridViewAgenda.DataSource = logicaAgenda.N_listar_agenda();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Deseas eliminar esta agenda?", "Mensaje",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                mantenimiento("3");
+                limpiar();
+            }
+        }
+
+        private void dataGridViewAgenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int fila = e.RowIndex;
+            if (fila >= 0)
+            {
+                dtpFecha.Value = Convert.ToDateTime(dataGridViewAgenda[0, fila].Value);
+
+                
+                TimeSpan hora = (TimeSpan)dataGridViewAgenda[1, fila].Value;
+                dtpHora.Value = dtpFecha.Value.Date + hora;
+
+                cmbVeterinario.Text = dataGridViewAgenda[2, fila].Value.ToString();
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Deseas modificar esta agenda?", "Mensaje",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                mantenimiento("2");
+                limpiar();
+            }
         }
     }
 }

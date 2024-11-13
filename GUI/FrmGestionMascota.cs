@@ -52,12 +52,13 @@ namespace GUI
             int fila = e.RowIndex;
             if (fila >= 0)
             {
-                txtNombre.Text = dataGridViewMascotas[0, fila].Value.ToString();
-                txtEspecie.Text = dataGridViewMascotas[1, fila].Value.ToString();
-                txtRaza.Text = dataGridViewMascotas[2, fila].Value.ToString();
-                txtEdad.Text = dataGridViewMascotas[3, fila].Value.ToString();
-                txtSexo.Text = dataGridViewMascotas[4, fila].Value.ToString();
-                txtCC_Cliente.Text = dataGridViewMascotas[5, fila].Value.ToString();
+                txtId.Text = dataGridViewMascotas[0, fila].Value.ToString();
+                txtNombre.Text = dataGridViewMascotas[1, fila].Value.ToString();
+                txtEspecie.Text = dataGridViewMascotas[2, fila].Value.ToString();
+                txtRaza.Text = dataGridViewMascotas[3, fila].Value.ToString();
+                txtEdad.Text = dataGridViewMascotas[4, fila].Value.ToString();
+                txtSexo.Text = dataGridViewMascotas[5, fila].Value.ToString();
+                txtCC_Cliente.Text = dataGridViewMascotas[6, fila].Value.ToString();
             }
         }
 
