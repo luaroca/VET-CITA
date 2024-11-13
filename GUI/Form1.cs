@@ -34,5 +34,23 @@ namespace GUI
             FrmGestionAgenda frmGestionAgenda = new FrmGestionAgenda();
             frmGestionAgenda.ShowDialog();
         }
+
+        private void btnGestionServicio_Click(object sender, EventArgs e)
+        {
+            FrmGestionServicio frmGestionServicio = new FrmGestionServicio();
+            frmGestionServicio.ShowDialog();
+        }
+
+        private void btnGestionVeterinario_Click(object sender, EventArgs e)
+        {
+            FrmGestionVeterinario gestionVeterinario = new FrmGestionVeterinario();
+            gestionVeterinario.ShowDialog();
+        }
+
+        private void btnGestionMasco_Click(object sender, EventArgs e)
+        {
+            FrmGestionMascota frmGestionMascota = new FrmGestionMascota();
+            frmGestionMascota.ShowDialog();
+        }
     }
 }

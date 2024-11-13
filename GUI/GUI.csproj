@@ -74,6 +74,24 @@
     <Compile Include="FrmGestionCliente.Designer.cs">
       <DependentUpon>FrmGestionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionMascota.Designer.cs">
+      <DependentUpon>FrmGestionMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionServicio.Designer.cs">
+      <DependentUpon>FrmGestionServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionVeterinario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionVeterinario.Designer.cs">
+      <DependentUpon>FrmGestionVeterinario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -87,6 +105,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionCliente.resx">
       <DependentUpon>FrmGestionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionMascota.resx">
+      <DependentUpon>FrmGestionMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionServicio.resx">
+      <DependentUpon>FrmGestionServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionVeterinario.resx">
+      <DependentUpon>FrmGestionVeterinario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

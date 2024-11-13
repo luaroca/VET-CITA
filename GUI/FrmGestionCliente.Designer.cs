@@ -81,6 +81,7 @@
             this.dataGridViewClientes.ReadOnly = true;
             this.dataGridViewClientes.RowHeadersWidth = 51;
             this.dataGridViewClientes.RowTemplate.Height = 24;
+            this.dataGridViewClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewClientes.Size = new System.Drawing.Size(740, 268);
             this.dataGridViewClientes.TabIndex = 4;
             this.dataGridViewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClientes_CellContentClick);
