@@ -59,15 +59,7 @@ namespace GUI
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            //if (txtCC_Cliente.Text == "")
-            //{
-            //    if (MessageBox.Show("¿Deseas registrar a " + txtNombre.Text + "?", "Mensaje",
-            //        MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            //    {
-            //        mantenimiento("1");
-            //        limpiar();
-            //    }
-            //}
+           
 
             if (!string.IsNullOrEmpty(txtNombre.Text)) 
             {

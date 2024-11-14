@@ -29,7 +29,7 @@ namespace PRUEBA
                 Console.WriteLine("1. Registrar Cliente");
                 Console.WriteLine("2. Modificar Cliente");
                 Console.WriteLine("3. Eliminar Cliente");
-                Console.WriteLine("4. Salir");
+                Console.WriteLine("7203846214:AAHgHb4i-GlsKcMAY3reSDRy8ks2_gRDfs0");
                 Console.Write("Seleccione una opción: ");
                 opcion = int.Parse(Console.ReadLine());
 
