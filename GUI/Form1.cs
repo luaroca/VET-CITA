@@ -7,20 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace GUI
 {
     public partial class Form1 : Form
     {
-        Bot bot = new Bot();
+        lll bot = new lll();
+        BotService bots = new BotService();
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(bot.NombreId());
+            await bots.EscucharActualizacionesAsync();  
         }
     }
 }

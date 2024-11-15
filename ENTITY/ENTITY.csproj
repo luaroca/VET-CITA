@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cita.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Bot.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Mascota.cs" />
     <Compile Include="Pago.cs" />
