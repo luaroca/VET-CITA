@@ -12,9 +12,15 @@ namespace GUI
 {
     public partial class Form1 : Form
     {
+        Bot bot = new Bot();
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(bot.NombreId());
         }
     }
 }
